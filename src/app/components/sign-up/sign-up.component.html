@@ -1,0 +1,22 @@
+<div class="container-fluid p-0">
+  <div class="bg-white p-3 form-custom" [formGroup]="signUpForm">
+    <h1>SIGN-UP</h1>
+    <div class="my-4">
+      <label class="mb-2">NAME</label><br />
+      <input type="text" class="w-100" formControlName="name" />
+    </div>
+    <div class="mb-4">
+      <label class="mb-2">EMAIL</label><br />
+      <input type="email" class="w-100" formControlName="email" />
+    </div>
+    <div class="mb-4">
+      <label class="mb-2">PASSWORD</label><br />
+      <input type="password" class="w-100" formControlName="password" />
+    </div>
+    <div class="mb-4">
+      <label class="mb-2">REPEAT PASSWORD</label><br />
+      <input type="password" class="w-100" formControlName="repeatPassword" />
+    </div>
+    <button [disabled]="!signUpForm.valid" (click)="onSubmit()">Submit</button>
+  </div>
+</div>

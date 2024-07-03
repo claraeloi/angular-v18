@@ -1,0 +1,14 @@
+<div class="container-fluid p-0">
+  <div class="bg-white p-3 form-custom" [formGroup]="verifyForm">
+    <h1>VERIFICATION EMAIL</h1>
+    <div class="mb-4">
+      <label class="mb-2">EMAIL</label><br />
+      <input type="email" class="w-100" formControlName="email" />
+    </div>
+    <div class="mb-4">
+      <label class="mb-2">CODE</label><br />
+      <input type="text" class="w-100" formControlName="code" />
+    </div>
+    <button [disabled]="!verifyForm.valid" (click)="onSubmit()">Verify</button>
+  </div>
+</div>

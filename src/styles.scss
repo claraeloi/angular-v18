@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+
+p {
+  color: #000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: steelblue !important;
+}
+
+.form-custom {
+  input {
+    background-color: white;
+    border: 2px solid lightsteelblue;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  label {
+    color: steelblue;
+  }
+
+  button {
+    background-color: steelblue;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+    color: white;
+
+    &:hover {
+      background-color: lightsteelblue;
+      color: black;
+    }
+  }
+}
+
+.btn-steelblue {
+  background-color: steelblue;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  width: 100%;
+  color: white;
+
+  &:hover {
+    background-color: lightsteelblue;
+    color: black;
+  }
+}
+
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+}
+
+.border-none {
+  border: none;
+}
+
+.bg-white {
+  background-color: white;
+  border-radius: 15px;
+}
+
+.bg-lightsteelblue {
+  background-color: lightsteelblue !important;
+}

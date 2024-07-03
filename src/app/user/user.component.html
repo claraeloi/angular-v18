@@ -1,0 +1,54 @@
+<mat-stepper linear #stepper>
+  <mat-step [stepControl]="signUpForm" [completed]="isStepOneCompleted">
+    <ng-template matStepLabel>Sign up</ng-template>
+    <div class="container-fluid p-0">
+      <div class="bg-white p-3 form-custom" [formGroup]="signUpForm">
+        <h3 class="text-center">SIGN-UP</h3>
+        <div class="my-4">
+          <label class="mb-2">NAME</label><br />
+          <input type="text" class="w-100" formControlName="name" />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2">EMAIL</label><br />
+          <input type="email" class="w-100" formControlName="email" />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2">PASSWORD</label><br />
+          <input type="password" class="w-100" formControlName="password" />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2">REPEAT PASSWORD</label><br />
+          <input type="password" class="w-100" formControlName="repeatPassword" />
+        </div>
+        <button [disabled]="!signUpForm.valid" (click)="onSubmitSignup(stepper)">Submit</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="verifyForm" [completed]="isStepTwoCompleted">
+    <ng-template matStepLabel>Verify your email</ng-template>
+    <div class="container-fluid p-0">
+      <div class="bg-white p-3 form-custom" [formGroup]="verifyForm">
+        <h3 class="text-center">VERIFICATION EMAIL</h3>
+        <div class="mb-4">
+          <label class="mb-2">EMAIL</label><br />
+          <input type="email" class="w-100" formControlName="email" />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2">CODE</label><br />
+          <input type="text" class="w-100" formControlName="code" />
+        </div>
+        <button [disabled]="!verifyForm.valid" (click)="onSubmitVerify(stepper)">Verify</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step [completed]="isStepThreeCompleted">
+    <ng-template matStepLabel>Welcome!</ng-template>
+    <div class="text-center">
+      <h3>WELCOME!</h3>
+      <p>Now you can access all our features!<br />Log in and manage your plans and features.</p>
+      <div>
+        <button class="btn-steelblue" (click)="redirectToLogin()">Login</button>
+      </div>
+    </div>
+  </mat-step>
+</mat-stepper>
